@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/menuback"
+    android:id="@+id/win">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="147dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="353dp"
+        android:background="@drawable/btnrestart"
+        android:onClick="restart"
+        android:padding="10dp"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="202dp"
+        android:layout_marginEnd="682dp"
+        android:layout_marginRight="682dp"
+        android:background="@drawable/exitbutton"
+        android:onClick="exit"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/congratulations"
+        android:layout_width="644dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:text="Congratulations"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="42sp" />
+
+    <TextView
+        android:id="@+id/youWin"
+        android:layout_width="171dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="403dp"
+        android:layout_marginRight="403dp"
+        android:text="You Win!"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="40sp" />
+
+
+</RelativeLayout>

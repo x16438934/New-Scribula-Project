@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/menuback"
+    tools:context=".Game.MainActivity">
+
+
+    <!--<ImageButton-->
+    <!--android:id="@+id/btnFadeOut"-->
+    <!--android:layout_width="93dp"-->
+    <!--android:layout_height="92dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/planet"-->
+    <!--android:onClick="startGame" />-->
+    <Button
+        android:id="@+id/level1btn"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="315dp"
+        android:layout_marginLeft="315dp"
+        android:layout_marginTop="92dp"
+        android:background="@drawable/levelbtn"
+        android:onClick="level1" />
+
+    <Button
+        android:id="@+id/leveltwobtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="224dp"
+        android:layout_marginLeft="224dp"
+        android:layout_marginTop="165dp"
+        android:onClick="leveltwo"
+        android:background="@drawable/level2btn" />
+
+    <Button
+        android:id="@+id/level3btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="239dp"
+        android:onClick="levelthree"
+        android:background="@drawable/level3btn" />
+    <TextView
+        android:id="@+id/tapTv"
+        android:layout_width="178dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="-136dp"
+        android:layout_marginBottom="51dp"
+        android:layout_toEndOf="@+id/imageView2"
+        android:fontFamily="@font/pressstart"
+        android:rotation="340"
+        android:text="Tap"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/toTv"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="382dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="-313dp"
+        android:layout_marginBottom="121dp"
+        android:fontFamily="@font/pressstart"
+        android:rotation="343"
+        android:text="To"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/PlayTv"
+        android:layout_width="228dp"
+        android:layout_height="68dp"
+        android:layout_alignEnd="@+id/imageView2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="589dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="-616dp"
+        android:layout_marginBottom="207dp"
+        android:fontFamily="@font/pressstart"
+        android:rotation="347"
+        android:text="Play"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="50sp" />
+
+    <!--<TextView-->
+    <!--android:id="@+id/p1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginEnd="302dp"-->
+    <!--android:layout_marginBottom="491dp"-->
+    <!--android:text="Collect the stars to go to the next level"-->
+    <!--android:textAlignment="center"-->
+    <!--android:textColor="#fffdd0"-->
+    <!--android:textSize="20sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView3"-->
+    <!--android:layout_width="376dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginEnd="383dp"-->
+    <!--android:layout_marginBottom="389dp"-->
+    <!--android:text="Don't get hit by the obstacles to go to the next level"-->
+    <!--android:textColor="#fffdd0"-->
+    <!--android:textSize="20sp" />-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/textView4"-->
+    <!--android:layout_width="401dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentEnd="true"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_marginEnd="413dp"-->
+    <!--android:layout_marginBottom="275dp"-->
+    <!--android:text=" Collect the stars and dodge the obstacles to win"-->
+    <!--android:textColor="#fffdd0"-->
+    <!--android:textSize="20sp" />-->
+
+
+</RelativeLayout>

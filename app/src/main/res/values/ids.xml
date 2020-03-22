@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="drag_drop_button" type="id" />
+    <item name="one" type="id" />
+    <item name="drag_it_linear" type="id" />
+    <item name="Total" type="id" />
+    <item name="Success" type="id" />
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="actionBarColor">#FFFFFF</color>
+    <color name="actionBarColorDark">#0081B7</color>
+    <color name="nordicBackground">#FFFFFF</color>
+    <color name="actionBarMenuTextColor">#FFFFFF</color>
+    <color name="background_white">#FFFFFF</color>
+    <color name="text_colour_black">#000000</color>
+    <color name="button_colour_green">#66cd00</color>
+    <color name="red_font_colour">#EE2400</color>
+    <color name="green_text_colour">#10AB10</color>
+    <color name="blue_squares">#002BFF</color>
+    <color name="grey_squares">#A5A4A3</color>
+    <color name="grey_background">#DCDCDC</color>
+    <color name="blue_back_text">#328EE5</color>
+</resources>

@@ -1,0 +1,103 @@
+<resources>
+    <string name="app_name">Scribula</string>
+    <string name="scriba_demo">Scriba Demo</string>
+    <string name="pair_instructions">To pair your Scriba, fully squeeze and hold down for two seconds until it vibrates gently, then tap on the device to connect. Release and fully depress again to calibrate.\n\nNearby devices (tap to details):</string>
+    <string name="scanner_title">Select device:</string>
+    <string name="scanner_empty">No device found</string>
+    <string name="scanner_action_scan">Scan</string>
+    <string name="scanner_action_cancel">Cancel</string>
+    <string name="scanner_subtitle_bonded">BONDED DEVICES:</string>
+    <string name="scanner_subtitle_not_bonded">AVAILABLE DEVICES:</string>
+    <string name="scanner_permission_rationale">Since Android 6.0 Marshmallow system requires granting access to device\'s location in order to scan for Bluetooth Smart devices. Bluetooth beacons may be used to determine the phone\'s and user\'s location.</string>
+    <string name="no_required_permission">Permission denied.</string>
+
+    <string name="action_about">About</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_connect">CONNECT</string>
+    <string name="action_select">SELECT DEVICE</string>
+    <string name="action_add_device">ADD DEVICE</string>
+    <string name="action_connecting">CONNECTING…</string>
+    <string name="action_disconnect">DISCONNECT</string>
+    <string name="action_disconnecting">DISCONNECTING…</string>
+    <string name="not_available">n/a</string>
+
+    <string-array name="hrs_locations">
+        <item>Other</item>
+        <item>Chest</item>
+        <item>Wrist</item>
+        <item>Finger</item>
+        <item>Hand</item>
+        <item>Ear Lobe</item>
+        <item>Foot</item>
+    </string-array>
+    <string name="hrs_location_other">Reserved</string>
+
+    <string name="battery_label">Battery:</string>
+    <string name="battery">%d%%</string>
+    <string name="click_buzz_demo_button">Click + Buzz Demo</string>
+    <string name="squeeze_zone_demo">Squeeze Zone Demo</string>
+    <string name="smartlock_demo">Smartlock Demo</string>
+    <string name="brushes_demo">Scriba Brushes Demo</string>
+    <string name="drag_drop_button">Drag Drop</string>
+    <string name="flappy_bird">Flappy Bird</string>
+    <string name="Main_Activity">Rocket Game</string>
+    <string name="game_Activity">Game Activity</string>
+
+    <string name="click_instructions">Although Scriba has been designed not to have any buttons, the squeeze-motion has been enabled to detect single or multiple \'clicks\' and these can be assigned to different app functionality.\n\nA \'click\' is considered to be a rapid full squeeze where the upper portion of the body is squeezed down such that it contacts with the lower part of the body.</string>
+    <string name="click_now_label">Click now</string>
+    <string name="single_click_label">Single Click</string>
+    <string name="one_click">1</string>
+    <string name="double_click_label">Double Click</string>
+    <string name="two_clicks">2</string>
+    <string name="triple_click_label">Triple Click</string>
+    <string name="three_clicks">3</string>
+    <string name="buzz_label">Buzz</string>
+    <string name="buzz_instruction">Activate Scriba Buzz</string>
+
+    <string name="squeeze_zone_heading">Squeeze Zone</string>
+    <string name="squeeze_zone_value_label">value:</string>
+    <string name="squeeze_zone_value"> %.2f</string>
+    <string name="zone0">0</string>
+    <string name="zone1">1</string>
+    <string name="zone2">2</string>
+    <string name="zone3">3</string>
+    <string name="zone4">4</string>
+    <string name="squeeze_zone_instructional_text">To take advantage of the large range of movement of Scriba, we have introduces a feature that sub-divides this range into a number of discrete pressure ranges. We have described this as \"Squeeze Zones\" and it is included in the Scriba framework.\n\n
+    As an extension of the app UI, these Zones can be used to quickly cycle between commonly used tools or functionality. The selected too is then activated with a touch event.\n\n
+    The framework includes 5 such zones:\n
+    Zone 0\nThis is the default resting value of Scriba without applied pressure. This zone also allows a degree of tolerance for accidental squeezes.\n
+    Zone 1\nA light pressure, this \'third\' corresponds to depression values of 0.1 to 0.37\n
+    Zone 2\nMedium applied pressure, mid zone, corresponds to depression values of 0.37 to 0.63\n
+    Zone 3\nHeavier pressure, this \'third\' corresponds to depression values of 0.63 to 1\n
+    Zone 4\nFull Depression, This zone also allows a degree of tolerance for incomplete full squeezes.</string>
+
+    <string name="smart_lock_instructions">Smart-Lock will engage if Scriba detects that it is being held at constant pressure. Press the Icon to deactivate Smart-Lock detection.</string>
+    <string name="lock_engaged_instructions">Smart-Lock is Engaged. A single click will deactivate Smart-Lock.</string>
+    <string name="lock_deactivated_instructions">Smart-Lock has been deactivated.</string>
+    <string name="lock_pressure_value">%.2f</string>
+    <string name="lock_enabled">Smart-Lock Enabled</string>
+    <string name="lock_engaged">Smart-Lock Engaged</string>
+    <string name="lock_deactivated">Smart-Lock Deactivated</string>
+    <string name="feature_intro_heading">Feature Introduction:</string>
+    <string name="feature_intro_text">Users will not always require constantly changing line-weight and Scriba features the ability to intelligently lock at a particular weight. We have called this feature \"Smart-Lock\" and it is a feature that can be activated through the Scriba framework.\n\n
+    Scriba detects when the applied pressure has been held at a constant level for one second or more and automatically locks the line-weight at that pressure. This line-weight is then held until the user deactivates the lock.\n\n
+    The locking action is notified through the framework allowing for an on-screen notification and may also be configured to be accompanied by a haptic response.\n\n
+    When the lock is active the user can continually vary the applied pressure without affecting the line-weight.\n\n
+    The lock is deactivated with a full depress and normal pressure mapping returns.\n\n
+    In alternative configurations a button may be provided as part of the app UI to allow the user to turn the lock on or off.\n\n
+    Smart-Lock does not activate at the minimum or maximum line weights unless manually activated.</string>
+    <string name="default_pressure">0.00</string>
+
+    <string name="brushes_instructions">Draw something, then squeeze the Scriba to see the brush size change. Double Click to engage Smart-Lock at a brush size of 50. Single Click to remove Smart-Lock. Triple Click to clear the canvas.</string>
+
+    <string name="bonding">Bonding with the device.</string>
+    <string name="bonded">Device now bonded.</string>
+    <string name="not_supported">Device not supported.</string>
+    <string name="no_ble">Device doesn\'t have BLE support.</string>
+
+    <string name="default_device_name">Scriba device</string>
+    <string name="unavailable_value"> - </string>
+    <string name="drag_drop" />
+    <string name="email_sent" />
+    <string name="title_activity_flappy_bird">FlappyBird</string>
+</resources>

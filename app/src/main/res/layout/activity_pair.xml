@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    android:id="@+id/pair">
+
+<!--    <pl.droidsonroids.gif.GifImageView-->
+<!--        android:id="@+id/gif_view_offer"-->
+<!--        android:layout_width="453dp"-->
+<!--        android:layout_height="102dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:src="@drawable/gif"-->
+<!--        android:visibility="visible" />-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#dfdfdf"
+        android:paddingBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/permission_rationale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:paddingEnd="26dp"
+        android:paddingStart="26dp"
+        android:text="@string/scanner_permission_rationale"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_colour_black"
+        android:paddingTop="5dp"
+        android:background="@color/background_white"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="@string/pair_instructions"/>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingEnd="26dp"
+        android:background="@color/background_white"
+        android:paddingStart="26dp"
+        android:scrollbarStyle="outsideOverlay"/>
+
+    <Button
+        android:id="@+id/creditBtn"
+        android:layout_width="44dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:background="@drawable/credit"
+        android:onClick="creditBtn" />
+
+</LinearLayout>

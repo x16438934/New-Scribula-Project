@@ -377,31 +377,31 @@ public class ChartActivity extends AppCompatActivity {
             return false;
         });
 
-        Button button2 = findViewById(R.id.textView2);
-
-        button2.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_DOWN)
-            {
-
-                button2.setScaleX(bigger);
-                button2.setScaleY(bigger);
-                button2.setTranslationY(-30);
-//                button1.setBackgroundResource(R.drawable.blue_220);
-            }
-
-            else if(event.getAction() == MotionEvent.ACTION_UP)
-            {
-                float x = 1;
-                float y = 1;
-
-                button2.setScaleX(x);
-                button2.setScaleY(y);
-                button2.setTranslationY(0);
-//                button1.setBackgroundResource(R.drawable.blue_206);
-
-            }
-            return false;
-        });
+//        Button button2 = findViewById(R.id.textView2);
+//
+//        button2.setOnTouchListener((v, event) -> {
+//            if (event.getAction() == MotionEvent.ACTION_DOWN)
+//            {
+//
+//                button2.setScaleX(bigger);
+//                button2.setScaleY(bigger);
+//                button2.setTranslationY(-30);
+////                button1.setBackgroundResource(R.drawable.blue_220);
+//            }
+//
+//            else if(event.getAction() == MotionEvent.ACTION_UP)
+//            {
+//                float x = 1;
+//                float y = 1;
+//
+//                button2.setScaleX(x);
+//                button2.setScaleY(y);
+//                button2.setTranslationY(0);
+////                button1.setBackgroundResource(R.drawable.blue_206);
+//
+//            }
+//            return false;
+//        });
 
         Button button3 = findViewById(R.id.textView3);
 

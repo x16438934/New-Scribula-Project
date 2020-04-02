@@ -9,15 +9,15 @@
     android:orientation="vertical"
     android:id="@+id/pair">
 
-<!--    <pl.droidsonroids.gif.GifImageView-->
-<!--        android:id="@+id/gif_view_offer"-->
-<!--        android:layout_width="453dp"-->
-<!--        android:layout_height="102dp"-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:src="@drawable/gif"-->
-<!--        android:visibility="visible" />-->
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gif_view_offer"
+        android:layout_width="453dp"
+        android:layout_height="102dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/gif"
+        android:visibility="visible" />
 
     <View
         android:layout_width="match_parent"

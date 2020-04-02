@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.getscriba.sampleapp.android.Game">
+
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -14,7 +15,7 @@
         android:screenOrientation="sensorLandscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-
+        <activity android:name=".Game.ChartActivity"></activity>
         <activity android:name=".Game.AgeAndGender" /> <!-- <activity android:name=".InitialDemoActivity" /> -->
         <activity android:name=".Game.MainActivity" />
         <activity android:name=".Game.Video">
@@ -24,10 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Game.PairActivity"/>
-<!--            android:label="@string/app_name"-->
-<!--            android:screenOrientation="landscape" />-->
+        <activity android:name=".Game.PairActivity" /> <!-- android:label="@string/app_name" -->
+        <!-- android:screenOrientation="landscape" /> -->
         <activity
             android:name=".Game.GameActivity"
             android:configChanges="orientation|keyboardHidden" />

@@ -16,4 +16,31 @@
     <color name="grey_squares">#A5A4A3</color>
     <color name="grey_background">#DCDCDC</color>
     <color name="blue_back_text">#328EE5</color>
+
+
+
+    <color name="ageGenderColorPrimary">#30BEFD</color>
+    <color name="highScoreColorPrimary">#F44336</color>
+    <color name="toolbar_color">#C65450</color>
+    <color name="newColorPrimary">#FD6039</color>
+    <color name="highScoreColorPrimaryDark">#D43333</color>
+    <color name="ageGenderColorPrimaryDark">#2BA9E0</color>
+
+    <color name="highScoreColorAccent">#D81B60</color>
+    <color name="ageGenderColorAccentColor">#30BEFD</color>
+
+    <color name="RaleWayTextGrey">#3e3e3e</color>
+    <color name="btn_yellow">#ffca3e</color>
+    <color name="txt_white">#FFFFFF</color>
+    <color name="AgeGenderPoPUp">#39FFCA3D</color>
+    <color name="invisable_color">#00FFCA3E</color>
+    <color name="White">#FFFFFF</color>
+    <color name="invisible">#00FFFFFF</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#FFA500</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#008000</color>
+    <color name="blue">#0000FF</color>
+    <color name="indigo">#4B0082</color>
+    <color name="gray">#B4B4B4</color>
 </resources>

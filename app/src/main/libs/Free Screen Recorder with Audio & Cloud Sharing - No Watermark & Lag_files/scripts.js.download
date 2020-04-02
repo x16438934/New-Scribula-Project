@@ -1,0 +1,3 @@
+jQuery(function(){var $body=jQuery('body');var redirection={win:'screenrec-quickstart-guide-for-windows-xp-vista-7-8-10',linux:'url-linux',mac:'url-mac'};function onRedirectToUrl(){var redirect=jQuery(this).data('redirect');if(!redirect){return;}
+var url=document.location+'/'+redirection[redirect];$body.css('pointer-events','none');setTimeout(function(){document.location.href=url;},2000);}
+$body.on('click','[data-redirect]',onRedirectToUrl);});

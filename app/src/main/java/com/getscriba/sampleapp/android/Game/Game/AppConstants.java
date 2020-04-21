@@ -38,6 +38,7 @@ public class AppConstants implements ScribaStylusManagerCallbacks {
     static int depression;
     static Context gameActivityContext;
     static Paint scorePaint;
+    static Paint dataPaint;
     static int score;
 
     public static void initialization(Context context){
@@ -51,6 +52,11 @@ public class AppConstants implements ScribaStylusManagerCallbacks {
         scorePaint.setColor(Color.WHITE);
         scorePaint.setTextSize(70);
         scorePaint.setTextAlign(Paint.Align.LEFT);
+
+        dataPaint = new Paint();
+        dataPaint.setColor(Color.WHITE);
+        dataPaint.setTextSize(30);
+        dataPaint.setTextAlign(Paint.Align.LEFT);
 
     }
 

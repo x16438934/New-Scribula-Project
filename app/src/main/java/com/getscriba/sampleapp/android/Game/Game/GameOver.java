@@ -31,7 +31,7 @@ public class GameOver extends AppCompatActivity implements ScribaStylusManagerCa
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_over);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         button = findViewById(R.id.leaderboard);
         ageGenBtn = findViewById(R.id.ageGenBtn);
         level2btn = findViewById(R.id.level2btn);

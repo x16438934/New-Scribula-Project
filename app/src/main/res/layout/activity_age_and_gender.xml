@@ -1,93 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#39FFCA3D"
     android:orientation="vertical"
-    tools:context="com.getscriba.sampleapp.android.Game.Game.AgeAndGender">
+    tools:context=".Game.AgeAndGender">
 
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:text="Please enter Age and Gender"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/save_btn"
+        android:layout_width="@dimen/tab_but_width"
+        android:layout_height="@dimen/tab_but_height"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/icons_button_save_gender"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
 
-        <NumberPicker
-            android:id="@+id/numberPicker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
-<!--            android:theme="@style/NumberPickerText"-->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/pressstart"
+        android:text="please Enter age and gender"
+        android:textAlignment="center"
+        android:textColor="@color/RaleWayTextGrey"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <NumberPicker
+        android:id="@+id/numberPicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="100dp"
+        android:theme="@style/NumberPickerText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberPicker">
 
 
-        <RadioGroup
-            android:id="@+id/radioGroup1"
+        <RadioButton
+            android:id="@+id/female_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/numberPicker">
+            android:layout_margin="10dp"
+            android:checked="true"
+            android:fontFamily="@font/pressstart"
+            android:onClick="onGenderButton"
+            android:text="female"
+            android:textColor="@color/RaleWayTextGrey"
+            android:textSize="20sp" />
 
-
-            <RadioButton
-                android:id="@+id/female_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:onClick="onGenderButton"
-                android:text="female"
-                android:textColor="#000000"
-                android:textSize="30sp" />
-            <!--                android:fontFamily="@font/raleway"-->
-
-            <RadioButton
-                android:id="@+id/male_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:checked="true"
-                android:onClick="onGenderButton"
-                android:text="male"
-                android:textColor="#000000"
-                android:textSize="30sp" />
-            <!--                android:fontFamily="@font/raleway"-->
-
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/save_btn"
+        <RadioButton
+            android:id="@+id/male_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:backgroundTint="#FFFF00"
-            android:text="save age and gender"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup1" />
+            android:layout_margin="10dp"
+            android:fontFamily="@font/pressstart"
+            android:onClick="onGenderButton"
+            android:text="male"
+            android:textColor="@color/RaleWayTextGrey"
+            android:textSize="20sp" />
 
+    </RadioGroup>
 
-    </android.support.constraint.ConstraintLayout>
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView3"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:adjustViewBounds="true"-->
+<!--        android:scaleType="fitEnd"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:srcCompat="@drawable/menuback" />-->
 
-
+</androidx.constraintlayout.widget.ConstraintLayout>

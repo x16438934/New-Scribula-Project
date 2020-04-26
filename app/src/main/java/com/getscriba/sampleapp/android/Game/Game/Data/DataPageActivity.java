@@ -1,4 +1,4 @@
-package com.snap.sdk.android;
+package com.getscriba.sampleapp.android.Game.Game.Data;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,14 +7,16 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
-import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.snap.sdk.android.library.GoogleFormUploader;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.getscriba.sampleapp.android.Game.Game.AgeAndGender;
+import com.getscriba.sampleapp.android.Game.R;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -38,7 +40,7 @@ public class DataPageActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_page);
-        this.setTitle(R.string.scriba_data_page);
+//        this.setTitle(R.string.scriba_data_page);
         settings = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
         Button sendBtn = findViewById(R.id.sendBtn);
         Button resetBtn = findViewById(R.id.resetBtn);
@@ -51,7 +53,7 @@ public class DataPageActivity extends AppCompatActivity {
         simpleSwitch1.setOnClickListener(v -> testMode());
 
         Button btnChangeAgeGender = findViewById(R.id.gender_age_btn);
-        btnChangeAgeGender.setOnClickListener(v -> startActivity(new Intent(DataPageActivity.this, AddAgeGenderActivity.class)));
+        btnChangeAgeGender.setOnClickListener(v -> startActivity(new Intent(DataPageActivity.this, AgeAndGender.class)));
 
         checkAgeGender();
     }
@@ -112,7 +114,7 @@ public class DataPageActivity extends AppCompatActivity {
         int userAge = settings.getInt("userAge", 0);
         String userGender = settings.getString("userGender", "Na");
         if (userGender.equals("Na")){
-            txt_age_gender_status.setText(R.string.age_gender_button);
+            txt_age_gender_status.setText("Age and Gender");
         }
         else{
             String textAgeAndGender = "User's Age: " + userAge +" & User's Gender: "+ userGender;
@@ -152,9 +154,12 @@ public class DataPageActivity extends AppCompatActivity {
     private void GoogleForm() {
 //        Send to a google spread sheet.
 //        GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSdbu5lz54nMChDYzmKVD2kT-Fj0fo40ujeOjoQjfj9BR2vQog");// My own Google Sheet
-        GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSdTMKJnZK4pqTxyiCWgb2Gw-MpHeo-GqIl-1ybqS-cN96xwDg");//The Official Google Sheet
+        GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSfXojnKiZMVJJkfVet8iD2xEeKkwyH9vPz_jOnuogrOui3syA");//The Official Google Sheet
 //        uploader.addEntry("1427750319", dataAsString); // My own Google Sheet
-        uploader.addEntry("1080124174", dataAsString);//The Official Google Sheet
+        uploader.addEntry("410215655", dataAsString);//The Official Google Sheet
+        uploader.addEntry("135689214", dataAsString);
+        uploader.addEntry("974849132", dataAsString);
+
         uploader.upload();
         Toast.makeText(DataPageActivity.this, "The Data was sent", Toast.LENGTH_LONG).show();
         resetCSV();

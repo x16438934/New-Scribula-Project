@@ -1,5 +1,6 @@
 package com.getscriba.sampleapp.android.Game.Game;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -70,7 +71,9 @@ public class AgeAndGender extends AppCompatActivity {
         editor.putString("userGender", userGender);
         editor.apply();
         Toast.makeText(this, "The users Age was Saved as: "+userAge+" and Gender was Saved As: "+ userGender, Toast.LENGTH_SHORT).show();
-        this.finish();
+        Intent intent = new Intent(this, GameOver.class);
+        finish();
+        startActivity(intent);
     }
 
 }

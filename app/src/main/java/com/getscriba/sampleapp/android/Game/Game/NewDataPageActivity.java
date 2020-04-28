@@ -49,7 +49,7 @@ public class NewDataPageActivity extends AppCompatActivity {
 //        testBtn = findViewById(R.id.testBtn);
         Switch simpleSwitch1 = findViewById(R.id.simpleSwitch1);
 
-        sendBtn.setOnClickListener(v -> readScoreLog());
+        sendBtn.setOnClickListener(v -> GoogleForm());
         resetBtn.setOnClickListener(v -> resetCSV());
         simpleSwitch1.setOnClickListener(v -> testMode());
 
@@ -156,9 +156,9 @@ public class NewDataPageActivity extends AppCompatActivity {
 //        Send to a google spread sheet.
 //        GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSdbu5lz54nMChDYzmKVD2kT-Fj0fo40ujeOjoQjfj9BR2vQog");// My own Google Sheet
         GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSfXojnKiZMVJJkfVet8iD2xEeKkwyH9vPz_jOnuogrOui3syA");//The Official Google Sheet
-        uploader.addEntry("410215655", "Test");//The Official Google Sheet
-        uploader.addEntry("135689214", "Test");
-        uploader.addEntry("974849132", "Test");
+        uploader.addEntry("410215655", dataAsString);//The Official Google Sheet
+        uploader.addEntry("135689214", dataAsString);
+        uploader.addEntry("974849132", dataAsString);
 
         uploader.upload();
         Log.d(TAG,"Data was successfully sent ---------------------------");

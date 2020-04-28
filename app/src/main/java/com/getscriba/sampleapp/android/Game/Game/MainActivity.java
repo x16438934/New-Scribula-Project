@@ -36,8 +36,10 @@ TextView t;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppConstants.initialization(this.getApplicationContext());
+
         level2button = findViewById(R.id.leveltwobtn);
         level3btn = findViewById(R.id.level3btn);
+
 
         level2button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +76,9 @@ TextView t;
 
        }
 
-//    public void startGame(View view){
+
+
+    //    public void startGame(View view){
 //        Log.i("ImageButton","clicked");
 //        Intent intent = new Intent(this, GameActivity.class);
 //        startActivity(intent);

@@ -6,6 +6,18 @@
     android:id="@+id/over"
     android:background="@drawable/menuback">
 
+    <Button
+        android:id="@+id/datapageBtn"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="To Datapage"
+        android:layout_marginStart="385dp"
+        android:layout_marginLeft="385dp"
+        android:layout_marginTop="62dp"/>
+
 
 
     <Button
@@ -140,17 +152,6 @@
         android:onClick="mainmenu"
         android:layout_marginBottom="12dp"
         android:text="Main Menu" />
-
-    <Button
-        android:id="@+id/ageGenBtn"
-        android:layout_width="142dp"
-        android:layout_height="76dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="775dp"
-        android:layout_marginBottom="415dp"
-        android:text="Submit"
-        android:textColor="#FFFF00" />
 
 
     <!--<LinearLayout-->

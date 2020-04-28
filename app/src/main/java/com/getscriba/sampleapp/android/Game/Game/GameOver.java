@@ -20,11 +20,13 @@ import com.getscriba.sdk.android.scribasdk.ScribaStylusManagerCallbacks;
 import java.util.List;
 
 public class GameOver extends AppCompatActivity implements ScribaStylusManagerCallbacks {
-
+    private static final String TAG = GameOver.class.getName();
     BackgroundImage backgroundImage;
     TextView tvScore, tvPersonalBest;
     TextView t;
-    private Button button, level2btn, level3btn,  mainmenubtn, ageGenBtn;
+    private String dataAsString;
+    private static final String FILE_NAME = "data.csv";
+    private Button button, level2btn, level3btn,  mainmenubtn, dataPageBtn;
     int score;
 
     @Override
@@ -33,38 +35,23 @@ public class GameOver extends AppCompatActivity implements ScribaStylusManagerCa
         setContentView(R.layout.game_over);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         button = findViewById(R.id.leaderboard);
-        ageGenBtn = findViewById(R.id.ageGenBtn);
         level2btn = findViewById(R.id.level2btn);
         level3btn = findViewById(R.id.level3btn);
         mainmenubtn =  findViewById(R.id.mainmenubtn);
-        ageGenBtn.setOnClickListener(new View.OnClickListener() {
+        dataPageBtn = findViewById(R.id.datapageBtn);
+        dataPageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                ageGender();
+            public void onClick(View view) {
+                goToDataPage();
             }
         });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openLeaderboard();
             }
         });
-
-//        level2btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                level2();
-//            }
-//        });
-//        level3btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                level3();
-//            }
-//        });
-
-
-
 
         View overLay = findViewById(R.id.over);
 
@@ -86,11 +73,17 @@ public class GameOver extends AppCompatActivity implements ScribaStylusManagerCa
 
     }
 
-    private void ageGender() {
-        Intent intent = new Intent(GameOver.this, AgeAndGender.class);
-        finish();
+//    private void sendScribaData() {
+//        Intent intent = new Intent(GameOver.this, DataPageActivity.class);
+//        finish();
+//        startActivity(intent);
+//    }
+
+    private void goToDataPage() {
+        Intent intent = new Intent(this, NewDataPageActivity.class);
         startActivity(intent);
     }
+
 
     public void restart(View view){
         Intent intent = new Intent(GameOver.this, GameActivity.class);
@@ -104,6 +97,7 @@ public class GameOver extends AppCompatActivity implements ScribaStylusManagerCa
 
         }
     }
+
     public void level1(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -116,8 +110,6 @@ public class GameOver extends AppCompatActivity implements ScribaStylusManagerCa
 
         if(AppConstants.getGameEngine().gameState == 0){
             AppConstants.getGameEngine().gameState = 1;
-
-
 
         }
     }
@@ -140,23 +132,6 @@ public class GameOver extends AppCompatActivity implements ScribaStylusManagerCa
 public void openLeaderboard (){
         GameActivity.endd(score);
 }
-
-//public void level2(){
-//        Intent intent = new Intent(GameOver.this, GameActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//        AppConstants.gameEngine = new GameEngine();
-//        GameEngine.score = 10;
-//        GameEngine.theLevel = 2;
-//
-//        finish();
-//        startActivity(intent);
-//        GameEngine.newLevel = 2;
-//
-//    if(AppConstants.getGameEngine().gameState == 0){
-//        AppConstants.getGameEngine().gameState = 1;
-//
-//    }
-//}
 
     public void level3(View view){
         Intent intent = new Intent(GameOver.this, GameActivity.class);

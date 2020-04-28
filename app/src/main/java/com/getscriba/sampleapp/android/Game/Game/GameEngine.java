@@ -287,13 +287,6 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
                 }
                 if (theLevel == 3) {
 
-                    if (score == 999999999) {
-                        gameState = 3;
-                        Context context = AppConstants.gameActivityContext;
-                        Intent intent = new Intent(context, GameWin.class);
-                        context.startActivity(intent);
-                        ((Activity) context).finish();
-                    }
                }
 
 

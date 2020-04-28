@@ -1,4 +1,4 @@
-package com.getscriba.sampleapp.android.Game.Game.Data;
+package com.getscriba.sampleapp.android.Game.Game;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.getscriba.sampleapp.android.Game.Game.AgeAndGender;
+import com.getscriba.sampleapp.android.Game.Game.Data.GoogleFormUploader;
 import com.getscriba.sampleapp.android.Game.R;
 
 import java.io.BufferedReader;
@@ -25,8 +25,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class DataPageActivity extends AppCompatActivity {
-    private static final String TAG = DataPageActivity.class.getName();
+public class NewDataPageActivity extends AppCompatActivity {
+    private static final String TAG = NewDataPageActivity.class.getName();
     private static final String FILE_NAME = "data.csv";
     public static boolean testing;
     //    Button testBtn;
@@ -39,10 +39,11 @@ public class DataPageActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_page);
+        setContentView(R.layout.activity_new_data_page);
 //        this.setTitle(R.string.scriba_data_page);
         settings = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
         Button sendBtn = findViewById(R.id.sendBtn);
+
         Button resetBtn = findViewById(R.id.resetBtn);
         txt_age_gender_status = findViewById(R.id.txt_age_gender_status);
 //        testBtn = findViewById(R.id.testBtn);
@@ -53,7 +54,7 @@ public class DataPageActivity extends AppCompatActivity {
         simpleSwitch1.setOnClickListener(v -> testMode());
 
         Button btnChangeAgeGender = findViewById(R.id.gender_age_btn);
-        btnChangeAgeGender.setOnClickListener(v -> startActivity(new Intent(DataPageActivity.this, AgeAndGender.class)));
+        btnChangeAgeGender.setOnClickListener(v -> startActivity(new Intent(NewDataPageActivity.this, AgeAndGender.class)));
 
         checkAgeGender();
     }
@@ -64,12 +65,12 @@ public class DataPageActivity extends AppCompatActivity {
 
         if (testing) {
             testing = false;
-            Toast.makeText(DataPageActivity.this, "Test Data is off!", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewDataPageActivity.this, "Test Data is off!", Toast.LENGTH_LONG).show();
             editor.putBoolean("testing", testing);
             editor.apply();
         } else {
             testing = true;
-            Toast.makeText(DataPageActivity.this, "Test Data is on!", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewDataPageActivity.this, "Test Data is on!", Toast.LENGTH_LONG).show();
             editor.putBoolean("testing", testing);
             editor.apply();
         }
@@ -135,10 +136,10 @@ public class DataPageActivity extends AppCompatActivity {
                 GoogleForm();
             }
             else {
-                Toast.makeText(DataPageActivity.this, "Please connect to the Internet", Toast.LENGTH_LONG).show();
+                Toast.makeText(NewDataPageActivity.this, "Please connect to the Internet", Toast.LENGTH_LONG).show();
             }
         } else {
-            Toast.makeText(DataPageActivity.this, "The Scriba data file is empty, play the game if you want to send data.", Toast.LENGTH_LONG).show();
+            Toast.makeText(NewDataPageActivity.this, "The Scriba data file is empty, play the game if you want to send data.", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -162,7 +163,7 @@ public class DataPageActivity extends AppCompatActivity {
         uploader.upload();
         Log.d(TAG,"Data was successfully sent ---------------------------");
 
-        Toast.makeText(DataPageActivity.this, "The Data was sent", Toast.LENGTH_LONG).show();
+        Toast.makeText(NewDataPageActivity.this, "The Data was sent", Toast.LENGTH_LONG).show();
         resetCSV();
     }
 
@@ -179,7 +180,7 @@ public class DataPageActivity extends AppCompatActivity {
             out.flush();
             out.close();
 
-            new Handler().postDelayed(() -> Toast.makeText(DataPageActivity.this, "The Data File Has Been Reset", Toast.LENGTH_LONG).show(), 1000);
+            new Handler().postDelayed(() -> Toast.makeText(NewDataPageActivity.this, "The Data File Has Been Reset", Toast.LENGTH_LONG).show(), 1000);
 
         } catch (Exception e) {
             e.printStackTrace();

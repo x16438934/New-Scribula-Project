@@ -16,6 +16,7 @@
         android:screenOrientation="sensorLandscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Game.NewDataPageActivity"></activity>
         <activity android:name=".Game.ChartActivity" />
         <activity android:name=".Game.AgeAndGender" /> <!-- <activity android:name=".InitialDemoActivity" /> -->
         <activity android:name=".Game.MainActivity" />
@@ -33,9 +34,6 @@
             android:configChanges="orientation|keyboardHidden" />
         <activity
             android:name=".Game.GameOver"
-            android:configChanges="orientation|keyboardHidden" />
-        <activity
-            android:name=".Game.GameWin"
             android:configChanges="orientation|keyboardHidden" />
         <activity
             android:name=".Game.Leaderboard"

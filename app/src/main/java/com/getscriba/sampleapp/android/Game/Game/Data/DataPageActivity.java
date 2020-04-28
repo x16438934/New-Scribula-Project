@@ -26,7 +26,7 @@ import java.io.IOException;
 
 
 public class DataPageActivity extends AppCompatActivity {
-
+    private static final String TAG = DataPageActivity.class.getName();
     private static final String FILE_NAME = "data.csv";
     public static boolean testing;
     //    Button testBtn;
@@ -155,12 +155,13 @@ public class DataPageActivity extends AppCompatActivity {
 //        Send to a google spread sheet.
 //        GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSdbu5lz54nMChDYzmKVD2kT-Fj0fo40ujeOjoQjfj9BR2vQog");// My own Google Sheet
         GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSfXojnKiZMVJJkfVet8iD2xEeKkwyH9vPz_jOnuogrOui3syA");//The Official Google Sheet
-//        uploader.addEntry("1427750319", dataAsString); // My own Google Sheet
-        uploader.addEntry("410215655", dataAsString);//The Official Google Sheet
-        uploader.addEntry("135689214", dataAsString);
-        uploader.addEntry("974849132", dataAsString);
+        uploader.addEntry("410215655", "Test");//The Official Google Sheet
+        uploader.addEntry("135689214", "Test");
+        uploader.addEntry("974849132", "Test");
 
         uploader.upload();
+        Log.d(TAG,"Data was successfully sent ---------------------------");
+
         Toast.makeText(DataPageActivity.this, "The Data was sent", Toast.LENGTH_LONG).show();
         resetCSV();
     }

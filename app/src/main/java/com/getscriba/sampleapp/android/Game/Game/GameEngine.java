@@ -398,9 +398,10 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
         float engagement = (engagementInn * 100.0f) / engagementTotal;
 
         detailsSavedToCSV=
-                level + "," +
+
                         motorPlanning + "," +
-                        engagement + "," ;
+                        engagement + "," +
+                                score + ",";
 
         saveToGraph(motorPlanning, engagement);
 

@@ -20,12 +20,14 @@ import com.getscriba.sdk.android.scribasdk.ScribaStylusManagerCallbacks;
 
 import java.util.List;
 
+import static com.getscriba.sampleapp.android.Game.Game.GameEngine.theTest;
+
 
 public class MainActivity extends AppCompatActivity implements ScribaStylusManagerCallbacks {
     private static final String TAG = com.getscriba.sampleapp.android.Game.Game.MainActivity.class.getName();
     private ScribaStylusManager mManager;
     static float  newdepression;
-    public Button level2button, level3btn;
+    public Button level2button, level3btn, testBtn;
     private ImageButton btnfOut;
     BackgroundImage backgroundImage;
 
@@ -36,10 +38,16 @@ TextView t;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AppConstants.initialization(this.getApplicationContext());
-
+        testBtn = findViewById(R.id.testBtn);
         level2button = findViewById(R.id.leveltwobtn);
         level3btn = findViewById(R.id.level3btn);
 
+        testBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                theTest = 2;
+            }
+        });
 
         level2button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +134,22 @@ TextView t;
         }
     }
 
+    public void testBtn(View view) {
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        AppConstants.gameEngine = new GameEngine();
+        GameEngine.theTest = 2;
+        GameEngine.theLevel = 3;
+
+        finish();
+        startActivity(intent);
+        GameEngine.newLevel = 3;
+
+        if(AppConstants.getGameEngine().gameState == 0){
+            AppConstants.getGameEngine().gameState = 1;
+
+        }
+    }
 
 
     public void leveltwo(View view){

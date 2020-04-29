@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
+
 public class GameEngine extends AppCompatActivity implements ScribaStylusManagerCallbacks {
 
     private ScribaStylusManager mManager;
@@ -51,6 +53,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     private int engagementTotal;
     private static final String FILE_NAME = "data.csv";
     private String detailsSavedToCSV;
+    static int theTest;
     private int graphMotorPlanning;
     private int graphEngagement;
 
@@ -64,6 +67,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     public GameEngine() {
 
         theLevel = 1;
+        theTest = 1;
         mManager = ScribaStylusManager.getInstance(this);
         mManager.addCallbackInterface(this);
         backgroundImage = new BackgroundImage();
@@ -270,10 +274,10 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
                         canvas.drawBitmap(AppConstants.getBitmapBank().blob[0], blobs.get(j).getBlobX(), blobs.get(j).getBlobY(), null);
                 }
             }
-            if(theLevel == 3){
-                newLevel = 3;
-
-            }
+//            if(theLevel == 3){
+//                newLevel = 3;
+//
+//            }
 
                 if (theLevel == 2) {
                     newLevel = 2;
@@ -290,9 +294,8 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
                }
 
 
-                canvas.drawText("" + score, 20, 110, AppConstants.scorePaint);
-                canvas.drawText("Motor Planning: " + motorPlanning, 20, 150, AppConstants.dataPaint);
-                canvas.drawText("Engagement: " + engagementInnBoolean, 20, 190, AppConstants.dataPaint);
+                    canvas.drawText("" + score, 20, 110, AppConstants.scorePaint);
+
 
             switch (lives) {
                 case 3:
@@ -315,6 +318,11 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
             blobs.add(blob);
             fIncreased = true;
             AppConstants.numberOfBlobs = 2;
+        }
+
+        if(theTest == 2){
+            canvas.drawText("Motor Planning: " + motorPlanning, 20, 150, AppConstants.dataPaint);
+            canvas.drawText("Engagement: " + engagementInnBoolean, 20, 190, AppConstants.dataPaint);
         }
     }
 
@@ -370,19 +378,23 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
     private void level() {
         if(theLevel == 1 && score == 10) {
-                theLevel++;
+            theLevel++;
+            addToCSV();
 
         }
 
-        if (theLevel >1 && theLevel < 3){
+        if (theLevel == 2){
                 theLevel =2;
                 if(score == 30)
                     theLevel++;
+            addToCSV();
 
         } else if (theLevel > 2 && theLevel < 4){
                  theLevel = 3;
                  if (score == 999999999)
                      theLevel++;
+                 addToCSV();
+
         }
     }
 
@@ -398,8 +410,8 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
         saveToGraph(motorPlanning, engagement);
 
-        engagementInn = 0;
-        motorPlanning = 0;
+//        engagementInn = 0;
+//        motorPlanning = 0;
 
         saveFile();
     }

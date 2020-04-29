@@ -3,6 +3,7 @@ package com.getscriba.sampleapp.android.Game.Game;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ public class NewDataPageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_data_page);
 //        this.setTitle(R.string.scriba_data_page);
         settings = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Button sendBtn = findViewById(R.id.sendBtn);
 
         Button resetBtn = findViewById(R.id.resetBtn);

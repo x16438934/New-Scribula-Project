@@ -71,7 +71,7 @@ public class AgeAndGender extends AppCompatActivity {
         editor.putString("userGender", userGender);
         editor.apply();
         Toast.makeText(this, "The users Age was Saved as: "+userAge+" and Gender was Saved As: "+ userGender, Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, GameOver.class);
+        Intent intent = new Intent(this, NewDataPageActivity.class);
         finish();
         startActivity(intent);
     }

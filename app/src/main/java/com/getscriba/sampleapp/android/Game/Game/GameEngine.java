@@ -323,6 +323,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
         if(theTest == 2){
             canvas.drawText("Motor Planning: " + motorPlanning, 20, 150, AppConstants.dataPaint);
             canvas.drawText("Engagement: " + engagementInnBoolean, 20, 190, AppConstants.dataPaint);
+            canvas.drawText("Engagement Score: " + engagementInn, 20, 230, AppConstants.dataPaint);
         }
     }
 

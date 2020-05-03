@@ -56,8 +56,8 @@ public class GoogleFormUploader {
     }
 
     private String getFormUrl(){
-        return "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfXojnKiZMVJJkfVet8iD2xEeKkwyH9vPz_jOnuogrOui3syA/formResponse" + formId +"/formResponse";
-    }
+        return "https://docs.google.com/forms/d/e/" + formId +"/formResponse";
+        }
 
 
     private String getData() throws UnsupportedEncodingException {

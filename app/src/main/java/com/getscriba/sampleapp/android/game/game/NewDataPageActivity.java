@@ -160,7 +160,7 @@ public class NewDataPageActivity extends AppCompatActivity {
         GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSfXojnKiZMVJJkfVet8iD2xEeKkwyH9vPz_jOnuogrOui3syA");//The Official Google Sheet
         uploader.addEntry("410215655", dataAsString);//The Official Google Sheet
         uploader.addEntry("135689214", dataAsString);
-        uploader.addEntry("974849132", dataAsString);
+        uploader.addEntry("974849132", String.valueOf(0));
 
         uploader.upload();
         Log.d(TAG,"Data was successfully sent ---------------------------");

@@ -42,4 +42,6 @@ dependencies {
     implementation 'no.nordicsemi.android.support.v18:scanner:1.0.0'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
+
+    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
 }

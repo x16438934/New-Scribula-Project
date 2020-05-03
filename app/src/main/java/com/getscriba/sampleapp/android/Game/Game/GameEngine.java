@@ -20,10 +20,15 @@ import com.getscriba.sdk.android.scribasdk.ScribaStylusManagerCallbacks;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+
+import static com.getscriba.sampleapp.android.Game.Game.MainActivity.userAge;
+import static com.getscriba.sampleapp.android.Game.Game.MainActivity.userGender;
 
 
 public class GameEngine extends AppCompatActivity implements ScribaStylusManagerCallbacks {
@@ -56,6 +61,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     static int theTest;
     private int graphMotorPlanning;
     private int graphEngagement;
+    private String currentDateTimeString;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -154,6 +160,9 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
     public void updateAndDrawTubes(Canvas canvas) {
         if (gameState == 1) {
+            currentDateTimeString = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+            detailsSavedToCSV = "";
+            startTheCSV();
             //Hit Detection
             int topTubeY = tubes.get(scoringTube).getTopTubeOffsetY();
 
@@ -260,6 +269,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
             level();
 
            if (theLevel == 1 || theLevel == 3) {
+               startTheCSV();
                int indexCollision = BlobCollision();
                 if (indexCollision != 100) {
                     if (blobs.get(indexCollision).newScore) {
@@ -280,6 +290,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 //            }
 
                 if (theLevel == 2) {
+                    startTheCSV();
                     newLevel = 2;
                     if (tubes.get(scoringTube).getTubeX() < bird.getX() - AppConstants.getBitmapBank().getTubeWidth()) {
                         score++;
@@ -289,9 +300,6 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
                         }
                     }
                 }
-                if (theLevel == 3) {
-
-               }
 
 
                     canvas.drawText("" + score, 20, 110, AppConstants.scorePaint);
@@ -324,6 +332,9 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
             canvas.drawText("Motor Planning: " + motorPlanning, 20, 150, AppConstants.dataPaint);
             canvas.drawText("Engagement: " + engagementInnBoolean, 20, 190, AppConstants.dataPaint);
             canvas.drawText("Engagement Score: " + engagementInn, 20, 230, AppConstants.dataPaint);
+        }
+        if(lives == 0){
+            saveFile();
         }
     }
 
@@ -424,6 +435,16 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
         graphEngagement += engagement;
 
 //        updateDetailsForGraph(graphMotorPlanning,graphEngagement);
+    }
+
+
+    private void startTheCSV() {
+//        save user and game details at start of game
+        detailsSavedToCSV =
+                "#" + currentDateTimeString + "," +
+                        userGender + "," +
+                        userAge + ",";
+        saveFile();
     }
 
     private void saveFile() {

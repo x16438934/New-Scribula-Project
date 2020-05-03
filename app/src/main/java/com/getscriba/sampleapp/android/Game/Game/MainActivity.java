@@ -1,8 +1,10 @@
 package com.getscriba.sampleapp.android.Game.Game;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.getscriba.sdk.android.scribasdk.ScribaStylusManager;
 import com.getscriba.sdk.android.scribasdk.ScribaStylusManagerCallbacks;
 
 import java.util.List;
+import java.util.UUID;
 
 import static com.getscriba.sampleapp.android.Game.Game.GameEngine.theTest;
 
@@ -26,10 +29,14 @@ import static com.getscriba.sampleapp.android.Game.Game.GameEngine.theTest;
 public class MainActivity extends AppCompatActivity implements ScribaStylusManagerCallbacks {
     private static final String TAG = com.getscriba.sampleapp.android.Game.Game.MainActivity.class.getName();
     private ScribaStylusManager mManager;
+    public  static String userGender;
+    public  static int userAge;
     static float  newdepression;
     public Button level2button, level3btn, testBtn;
     private ImageButton btnfOut;
     BackgroundImage backgroundImage;
+
+    private SharedPreferences settings;
 
 TextView t;
 
@@ -41,6 +48,7 @@ TextView t;
         testBtn = findViewById(R.id.testBtn);
         level2button = findViewById(R.id.leveltwobtn);
         level3btn = findViewById(R.id.level3btn);
+
 
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,6 +193,27 @@ TextView t;
 
         }
     }
+
+//    @Override
+//    public void onResume(){
+//        super.onResume();
+//        //      used code from this website to get the saved the Age and Gender of the user
+//        //    https://stackoverflow.com/questions/10209814/saving-user-information-in-app-settings
+//        theTest = settings.getInt("testing", 2);
+//        try {
+//            userAge = settings.getInt("userAge", 0);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            String userAgeString = settings.getString("userAge", "0");
+//            userAge = Integer.parseInt(userAgeString);
+//            SharedPreferences.Editor editor = settings.edit();
+//            editor.putInt("userAge", userAge);
+//            editor.apply();
+//        }
+//        userGender = settings.getString("userGender", "Na");
+//
+//
+//    }
     @Override
     public void foundDevices(List<ScribaStylusDevice> list) {
 

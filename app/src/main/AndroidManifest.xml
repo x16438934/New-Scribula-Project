@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.getscriba.sampleapp.android.Game">
+    package="com.getscriba.sampleapp.android.game">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
@@ -16,33 +16,33 @@
         android:screenOrientation="sensorLandscape"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Game.NewDataPageActivity"></activity>
-        <activity android:name=".Game.ChartActivity" />
-        <activity android:name=".Game.AgeAndGender" /> <!-- <activity android:name=".InitialDemoActivity" /> -->
-        <activity android:name=".Game.MainActivity" />
-        <activity android:name=".Game.Video">
+        <activity android:name="com.getscriba.sampleapp.android.game.game.NewDataPageActivity"></activity>
+        <activity android:name="com.getscriba.sampleapp.android.game.game.ChartActivity" />
+        <activity android:name="com.getscriba.sampleapp.android.game.game.AgeAndGender" /> <!-- <activity android:name=".InitialDemoActivity" /> -->
+        <activity android:name="com.getscriba.sampleapp.android.game.game.MainActivity" />
+        <activity android:name="com.getscriba.sampleapp.android.game.game.Video">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Game.PairActivity" /> <!-- android:label="@string/app_name" -->
+        <activity android:name="com.getscriba.sampleapp.android.game.game.PairActivity" /> <!-- android:label="@string/app_name" -->
         <!-- android:screenOrientation="landscape" /> -->
         <activity
-            android:name=".Game.GameActivity"
+            android:name="com.getscriba.sampleapp.android.game.game.GameActivity"
             android:configChanges="orientation|keyboardHidden" />
         <activity
-            android:name=".Game.GameOver"
+            android:name="com.getscriba.sampleapp.android.game.game.GameOver"
             android:configChanges="orientation|keyboardHidden" />
         <activity
-            android:name=".Game.Leaderboard"
+            android:name="com.getscriba.sampleapp.android.game.game.Leaderboard"
             android:configChanges="orientation|keyboardHidden" />
         <activity
-            android:name=".Game.Credit"
+            android:name="com.getscriba.sampleapp.android.game.game.Credit"
             android:configChanges="orientation|keyboardHidden" />
         <activity
-            android:name=".Game.GameEngine"
+            android:name="com.getscriba.sampleapp.android.game.game.GameEngine"
             android:configChanges="orientation|keyboardHidden" />
 
         <meta-data

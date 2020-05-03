@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#39FFCA3D"
     android:orientation="vertical"
-    tools:context=".Game.AgeAndGender">
+    tools:context=".game.AgeAndGender">
 
 
     <Button

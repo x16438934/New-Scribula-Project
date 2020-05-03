@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:screenOrientation="landscape"
-    tools:context=".Game.ChartActivity">
+    tools:context=".game.ChartActivity">
 
     <lecho.lib.hellocharts.view.LineChartView
         android:id="@+id/chart1"

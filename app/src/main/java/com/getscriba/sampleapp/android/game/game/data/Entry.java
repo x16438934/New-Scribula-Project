@@ -3,9 +3,9 @@ package com.getscriba.sampleapp.android.game.game.data;
 public class Entry {
 
     private String entryId;
-    private String data;
+    private int data;
 
-    public Entry(String entryId, String data) {
+    public Entry(String entryId, int data) {
         this.entryId = entryId;
         this.data = data;
     }
@@ -18,11 +18,11 @@ public class Entry {
         this.entryId = entryId;
     }
 
-    public String getData() {
+    public int getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(int data) {
         this.data = data;
     }
 

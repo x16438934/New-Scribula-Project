@@ -49,8 +49,8 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     boolean livesScore;
     boolean fIncreased;
     boolean hi, mi;
-    private int motorPlanning;
-    private int engagementInn;
+    static int motorPlanning;
+    static int engagementInn;
     private boolean engagementInnBoolean;
     private int engagementTotal;
     private static final String FILE_NAME = "data.csv";
@@ -510,8 +510,9 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     @Override
     public void clickWithDevice(ScribaStylusDevice scribaStylusDevice, ClickType clickType) {
         if (clickType == ClickType.SINGLE || clickType == ClickType.DOUBLE || clickType == ClickType.TRIPLE) {
-            motorPlanning++;
+             motorPlanning++;
         }
+
 
     }
     @Override

@@ -27,7 +27,7 @@ public class GoogleFormUploader {
      * of the 'live form' to find your entry id's.
      * @param data - data for this column
      *****************************************/
-    public void addEntry(String id, String data){
+    public void addEntry(String id, int data){
         mEntries.add(new Entry(id, data));
     }
 
@@ -67,9 +67,9 @@ public class GoogleFormUploader {
             data.append(cur.getEntryId());
             data.append("=");
             try {
-                data.append(URLEncoder.encode(cur.getData(), "UTF-8"));
+                data.append(URLEncoder.encode(String.valueOf(cur.getData()), "UTF-8"));
             } catch (UnsupportedEncodingException e) {
-                data.append(URLEncoder.encode(cur.getData(), java.nio.charset.StandardCharsets.UTF_8.toString()));
+                data.append(URLEncoder.encode(String.valueOf(cur.getData()), java.nio.charset.StandardCharsets.UTF_8.toString()));
             }
             data.append("&");
         }

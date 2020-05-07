@@ -25,6 +25,10 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
+import static com.getscriba.sampleapp.android.game.game.GameEngine.engagementInn;
+import static com.getscriba.sampleapp.android.game.game.GameEngine.motorPlanning;
+import static com.getscriba.sampleapp.android.game.game.GameEngine.score;
+
 
 public class NewDataPageActivity extends AppCompatActivity {
     private static final String TAG = NewDataPageActivity.class.getName();
@@ -158,9 +162,12 @@ public class NewDataPageActivity extends AppCompatActivity {
 //        Send to a google spread sheet.
 //        GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSdbu5lz54nMChDYzmKVD2kT-Fj0fo40ujeOjoQjfj9BR2vQog");// My own Google Sheet
         GoogleFormUploader uploader = new GoogleFormUploader("1FAIpQLSfXojnKiZMVJJkfVet8iD2xEeKkwyH9vPz_jOnuogrOui3syA");//The Official Google Sheet
-        uploader.addEntry("410215655", dataAsString);//The Official Google Sheet
-        uploader.addEntry("135689214", dataAsString);
-        uploader.addEntry("974849132", String.valueOf(0));
+        if(dataAsString == null){
+            dataAsString = "Test";
+        }
+        uploader.addEntry("410215655", motorPlanning);//The Official Google Sheet
+        uploader.addEntry("135689214", engagementInn);
+        uploader.addEntry("974849132", score);
 
         uploader.upload();
         Log.d(TAG,"Data was successfully sent ---------------------------");

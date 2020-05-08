@@ -25,8 +25,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 
-import static com.getscriba.sampleapp.android.game.game.GameEngine.engagementInn;
-import static com.getscriba.sampleapp.android.game.game.GameEngine.motorPlanning;
+
 import static com.getscriba.sampleapp.android.game.game.GameEngine.score;
 
 
@@ -34,6 +33,8 @@ public class NewDataPageActivity extends AppCompatActivity {
     private static final String TAG = NewDataPageActivity.class.getName();
     private static final String FILE_NAME = "data.csv";
     public static boolean testing;
+    int motorPlanning;
+    int engagementInn;
     //    Button testBtn;
     private String dataAsString;
     private TextView txt_age_gender_status;
@@ -165,6 +166,15 @@ public class NewDataPageActivity extends AppCompatActivity {
         if(dataAsString == null){
             dataAsString = "Test";
         }
+
+        try {
+            motorPlanning = settings.getInt("motorPlanning", 0);
+            engagementInn = settings.getInt("engagementInn", 0);
+            score = settings.getInt("score", 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         uploader.addEntry("410215655", motorPlanning);//The Official Google Sheet
         uploader.addEntry("135689214", engagementInn);
         uploader.addEntry("974849132", score);

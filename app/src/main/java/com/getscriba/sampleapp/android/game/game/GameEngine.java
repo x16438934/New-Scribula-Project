@@ -1,6 +1,8 @@
 package com.getscriba.sampleapp.android.game.game;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -31,6 +33,7 @@ import static com.getscriba.sampleapp.android.game.game.MainActivity.userGender;
 public class GameEngine extends AppCompatActivity implements ScribaStylusManagerCallbacks {
 
     private ScribaStylusManager mManager;
+    private SharedPreferences settings;
     BackgroundImage backgroundImage;
     Bird bird;
     private int level;
@@ -49,8 +52,8 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     boolean livesScore;
     boolean fIncreased;
     boolean hi, mi;
-    static int motorPlanning;
-    static int engagementInn;
+    private int motorPlanning;
+    private int engagementInn;
     private boolean engagementInnBoolean;
     private int engagementTotal;
     private static final String FILE_NAME = "data.csv";
@@ -68,7 +71,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
 
     public GameEngine() {
-
+        settings = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
         theLevel = 1;
         theTest = 1;
         mManager = ScribaStylusManager.getInstance(this);
@@ -125,6 +128,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     public void updateAndDrawBird (Canvas canvas){
         if(GameThread.pause == false) {
             if (gameState == 1) {
+
                 if (bird.getY() < (AppConstants.SCREEN_HEIGHT - AppConstants.getBitmapBank().getBirdHeight()) || bird.getVelocity() < 0) {
                     bird.setVelocity(bird.getVelocity());
                     bird.setY(bird.getY() + bird.getVelocity());
@@ -175,10 +179,12 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
                 if (lives == 0 ) {
                     gameState = 2;
+                    saveDetails();
                     GameActivity.end(score);
 
                 }
                 if (lives == 0 && score > Leaderboard.newScoreSP) {
+                    saveDetails();
                     GameActivity.endd(score);
 
                 }
@@ -335,7 +341,15 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
         }
     }
 
-        public void updateAndDrawBackgroundImage (Canvas canvas){
+    private void saveDetails() {
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("motorPlanning", motorPlanning);
+        editor.putInt("engagementInn", engagementInn);
+        editor.putInt("score", score);
+        editor.apply();
+    }
+
+    public void updateAndDrawBackgroundImage (Canvas canvas){
             if(GameThread.pause == false) {
                 backgroundImage.setX(backgroundImage.getX() - backgroundImage.getVelocity());
                 if (backgroundImage.getX() < -AppConstants.getBitmapBank().getBackgroundWidth()) {
@@ -510,10 +524,8 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     @Override
     public void clickWithDevice(ScribaStylusDevice scribaStylusDevice, ClickType clickType) {
         if (clickType == ClickType.SINGLE || clickType == ClickType.DOUBLE || clickType == ClickType.TRIPLE) {
-             motorPlanning++;
+             motorPlanning ++;
         }
-
-
     }
     @Override
     public void enabledLockConditionChange(boolean b) {

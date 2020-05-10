@@ -251,54 +251,6 @@ public class ChartActivity extends AppCompatActivity {
         CLineChartView.setMaximumViewport(CViewport);
         CLineChartView.setCurrentViewport(CViewport);
 
-        //DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
-
-
-//        List<PointValue> DValues = new ArrayList<>();
-//        Line DLine = new Line(DValues).setColor(Color.parseColor("#008000"));
-//        for (int i = 0; i < speedOfMotorPlanningData.length; i++) {
-//            DValues.add(new PointValue(i, normalize(speedOfMotorPlanningData[i],maxSpeedOfMotorPlanning)));
-////            DValues.add(new PointValue(i, speedOfMotorPlanningData[i]));
-//        }
-//        List<Line> DLines = new ArrayList<>();
-//        DLines.add(DLine);
-//        LineChartData DData = new LineChartData();
-//        DData.setLines(DLines);
-//        DData.setAxisXBottom(Time);
-//        Axis D = new Axis();
-//        D.setTextColor(ContextCompat.getColor(context, R.color.invisible));
-//        D.setTextSize(16);
-//        DData.setAxisYLeft(D);
-//        DLineChartView.setLineChartData(DData);
-//        Viewport DViewport = new Viewport(DLineChartView.getMaximumViewport());
-//        DViewport.top = maxHeight;
-//        DViewport.bottom = 0;
-//        DLineChartView.setMaximumViewport(DViewport);
-//        DLineChartView.setCurrentViewport(DViewport);
-
-
-        //EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-
-//        List<PointValue> EValues = new ArrayList<>();
-//        Line ELine = new Line(EValues).setColor(Color.parseColor("#0000FF"));
-//        for (int i = 0; i < positionPrecisionData.length; i++) {
-//            EValues.add(new PointValue(i, normalize(positionPrecisionData[i],maxPositionPrecision)));
-////            EValues.add(new PointValue(i, positionPrecisionData[i]));
-//        }
-//        List<Line> ELines = new ArrayList<>();
-//        ELines.add(ELine);
-//        LineChartData EData = new LineChartData();
-//        EData.setLines(ELines);
-//        EData.setAxisXBottom(Time);
-//        Axis E = new Axis();
-//        E.setTextColor(ContextCompat.getColor(context, R.color.invisible));
-//        E.setTextSize(16);
-//        EData.setAxisYLeft(E);
-//        ELineChartView.setLineChartData(EData);
-//        Viewport EViewport = new Viewport(ELineChartView.getMaximumViewport());
-//        EViewport.top = maxHeight;
-//        EViewport.bottom = 0;
-
 
 
         //FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF

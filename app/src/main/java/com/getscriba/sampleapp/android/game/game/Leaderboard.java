@@ -56,7 +56,7 @@ public class Leaderboard extends AppCompatActivity {
 
         backgroundImage = new BackgroundImage();
 
-
+///saves the score and name
         score = getIntent().getExtras().getInt("score");
         newScoreSP = score;
         SharedPreferences pref = getSharedPreferences("MyPref", Context.MODE_PRIVATE);

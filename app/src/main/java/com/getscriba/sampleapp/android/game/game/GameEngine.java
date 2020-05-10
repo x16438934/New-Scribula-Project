@@ -52,8 +52,8 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
     boolean livesScore;
     boolean fIncreased;
     boolean hi, mi;
-    private int motorPlanning;
-    private int engagementInn;
+    static int motorPlanning;
+    static int engagementInn;
     private boolean engagementInnBoolean;
     private int engagementTotal;
     private static final String FILE_NAME = "data.csv";
@@ -71,7 +71,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
 
     public GameEngine() {
-        settings = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+//        settings = this.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
         theLevel = 1;
         theTest = 1;
         mManager = ScribaStylusManager.getInstance(this);
@@ -179,12 +179,12 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
                 if (lives == 0 ) {
                     gameState = 2;
-                    saveDetails();
+                    //saveDetails();
                     GameActivity.end(score);
 
                 }
                 if (lives == 0 && score > Leaderboard.newScoreSP) {
-                    saveDetails();
+                    //saveDetails();
                     GameActivity.endd(score);
 
                 }
@@ -268,9 +268,9 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
 
             //changes the frequency of blobs//////////////////////////////////////////////
 
-    //      drawableLevel();
             level();
 
+            // Level 1 and 3 scoring system
            if (theLevel == 1 || theLevel == 3) {
                startTheCSV();
                int indexCollision = BlobCollision();
@@ -287,11 +287,7 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
                         canvas.drawBitmap(AppConstants.getBitmapBank().blob[0], blobs.get(j).getBlobX(), blobs.get(j).getBlobY(), null);
                 }
             }
-//            if(theLevel == 3){
-//                newLevel = 3;
-//
-//            }
-
+           //level 2 scoring system
                 if (theLevel == 2) {
                     startTheCSV();
                     newLevel = 2;
@@ -341,14 +337,6 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
         }
     }
 
-    private void saveDetails() {
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putInt("motorPlanning", motorPlanning);
-        editor.putInt("engagementInn", engagementInn);
-        editor.putInt("score", score);
-        editor.apply();
-    }
-
     public void updateAndDrawBackgroundImage (Canvas canvas){
             if(GameThread.pause == false) {
                 backgroundImage.setX(backgroundImage.getX() - backgroundImage.getVelocity());
@@ -388,17 +376,6 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
          return 100;
      }
 
-//private void drawableLevel() {
-//        if (theLevel == 1) {
-//        pictureLevel = R.drawable.levelone;
-//    } else if (theLevel == 2) {
-//        pictureLevel = R.drawable.two;
-//    } else if (theLevel == 3) {
-//        pictureLevel = R.drawable.three;
-//    }
-//
-//}
-
     private void level() {
         if(theLevel == 1 && score == 10) {
             theLevel++;
@@ -432,9 +409,6 @@ public class GameEngine extends AppCompatActivity implements ScribaStylusManager
                                 score + ",";
 
         saveToGraph(motorPlanning, engagement);
-
-//        engagementInn = 0;
-//        motorPlanning = 0;
 
         saveFile();
     }

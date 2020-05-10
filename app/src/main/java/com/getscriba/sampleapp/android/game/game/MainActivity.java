@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements ScribaStylusManag
 
     private SharedPreferences settings;
 
+// Links to where I got all my Images that i use in the game
+//    https://pixabay.com/users/sweetmeatone-3429847/
+//    https://pixabay.com/users/pencilparker-7519217/
+//    https://pixabay.com/users/belozerovkids-10197347
+
 TextView t;
 
     @Override
@@ -85,25 +90,9 @@ TextView t;
                 | View.SYSTEM_UI_FLAG_FULLSCREEN);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
-
-
        }
 
-
-
-    //    public void startGame(View view){
-//        Log.i("ImageButton","clicked");
-//        Intent intent = new Intent(this, GameActivity.class);
-//        startActivity(intent);
-//        finish();
-//
-//        if (AppConstants.getGameEngine().gameState == 0) {
-//            AppConstants.getGameEngine().gameState = 1;
-//
-//        }
-//    }
-        @Override
+        @Override //start the game
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
         // Tap is detected
@@ -116,7 +105,6 @@ TextView t;
                 AppConstants.getGameEngine().gameState = 1;
 
             }
-       //  AppConstants.getGameEngine().bird.setVelocity(AppConstants.VELOCITY_WHEN_JUMPED);
 
         }
         return true;
@@ -135,11 +123,9 @@ TextView t;
         if(AppConstants.getGameEngine().gameState == 0){
             AppConstants.getGameEngine().gameState = 1;
 
-
-
         }
     }
-
+//Goes to test level
     public void testBtn(View view) {
         Intent intent = new Intent(this, GameActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -192,26 +178,6 @@ TextView t;
         }
     }
 
-//    @Override
-//    public void onResume(){
-//        super.onResume();
-//        //      used code from this website to get the saved the Age and Gender of the user
-//        //    https://stackoverflow.com/questions/10209814/saving-user-information-in-app-settings
-//        theTest = settings.getInt("testing", 2);
-//        try {
-//            userAge = settings.getInt("userAge", 0);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            String userAgeString = settings.getString("userAge", "0");
-//            userAge = Integer.parseInt(userAgeString);
-//            SharedPreferences.Editor editor = settings.edit();
-//            editor.putInt("userAge", userAge);
-//            editor.apply();
-//        }
-//        userGender = settings.getString("userGender", "Na");
-//
-//
-//    }
     @Override
     public void foundDevices(List<ScribaStylusDevice> list) {
 
@@ -237,8 +203,6 @@ TextView t;
 
         Log.d(TAG, "changeDepressionForDevice: " + depression);
         newdepression = (float) (0.5 - depression) * 40;
-
-
 
     }
 

@@ -4,10 +4,6 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 
-//entry.410215655
-//        entry.135689214
-//        entry.974849132
-
 public class GoogleFormUploader {
     private ArrayList<Entry> mEntries;
     private String formId;
@@ -39,8 +35,6 @@ public class GoogleFormUploader {
      * server.
      ***************************************/
     public void upload(){
-        //Log.i("Uploader", getFormUrl());
-        //Log.i("Uploader", getData());
         Thread t = new Thread(() -> {
             HttpRequest mReq = new HttpRequest();
             String response = null;
@@ -58,7 +52,6 @@ public class GoogleFormUploader {
     private String getFormUrl(){
         return "https://docs.google.com/forms/d/e/" + formId +"/formResponse";
         }
-
 
     private String getData() throws UnsupportedEncodingException {
         StringBuilder data = new StringBuilder();

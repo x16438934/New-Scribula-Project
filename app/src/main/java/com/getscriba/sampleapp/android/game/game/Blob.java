@@ -4,9 +4,6 @@ import java.util.Random;
 
 public class Blob {
 
-
-
-
     // blobX = Blob X-coordinate, blobOffsetY = blob bottom edge coordinate
     private int blobX, blobOffsetY;
     private Random random;

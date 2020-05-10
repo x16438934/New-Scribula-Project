@@ -74,8 +74,6 @@ public class HttpRequest {
     private String sendPost(String url, String data, String contentType) {
         ret = null;
 
-//        httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.RFC_2109);
-
         httpClient.getParams().setParameter(ClientPNames.COOKIE_POLICY, CookiePolicy.BROWSER_COMPATIBILITY);
 
         httpPost = new HttpPost(url);

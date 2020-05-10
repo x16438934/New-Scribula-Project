@@ -23,7 +23,6 @@ public class AppConstants implements ScribaStylusManagerCallbacks {
 
     static int SCREEN_WIDTH, SCREEN_HEIGHT;
     static int gravity;
-   // static int VELOCITY_WHEN_JUMPED;
     static int gapBetweenTopAndBottomTubes;
     static int numberOfTubes;
     static int tubeVelocity;

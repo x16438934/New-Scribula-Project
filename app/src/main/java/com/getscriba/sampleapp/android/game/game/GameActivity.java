@@ -53,6 +53,7 @@ public class GameActivity extends Activity implements ScribaStylusManagerCallbac
 
 
     }
+    // Brings you to GameOver page
     static void end(int score){
         Context context = AppConstants.gameActivityContext;
         Intent intent = new Intent(context, GameOver.class);
@@ -63,6 +64,7 @@ public class GameActivity extends Activity implements ScribaStylusManagerCallbac
 
 
     }
+    //Brings you to leader board page
     static void endd(int score) {
             Context context = AppConstants.gameActivityContext;
             GameEngine.gameState = 10;
@@ -70,13 +72,7 @@ public class GameActivity extends Activity implements ScribaStylusManagerCallbac
             intent.putExtra("score", AppConstants.score);
             context.startActivity(intent);
             ((Activity) context).finish();
-
-
-
         }
-
-
-
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {

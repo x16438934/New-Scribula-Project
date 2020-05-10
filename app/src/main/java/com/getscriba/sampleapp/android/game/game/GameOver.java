@@ -73,12 +73,6 @@ public class GameOver extends AppCompatActivity implements ScribaStylusManagerCa
 
     }
 
-//    private void sendScribaData() {
-//        Intent intent = new Intent(GameOver.this, DataPageActivity.class);
-//        finish();
-//        startActivity(intent);
-//    }
-
     private void goToDataPage() {
         Intent intent = new Intent(this, NewDataPageActivity.class);
         startActivity(intent);

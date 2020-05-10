@@ -47,30 +47,16 @@ public class PairActivity extends AppCompatActivity implements ScribaStylusManag
     private boolean mConnected = false;
     private TextView mPermissionRationale;
     private Handler mHandler = new Handler(Looper.getMainLooper());
-    Button creditBtn;
-
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ensureBleEnabled();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-
-//        View overLay = findViewById(R.id.pair);
-//        overLay.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-//                | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-//                | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
-//                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-//                | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-//                | View.SYSTEM_UI_FLAG_FULLSCREEN);
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_REQUEST_COARSE_LOCATION);
         }
 
-creditBtn = (Button) findViewById(R.id.creditBtn);
 
         setContentView(R.layout.activity_pair);
         this.setTitle(R.string.scriba_demo);
@@ -225,11 +211,6 @@ creditBtn = (Button) findViewById(R.id.creditBtn);
             }
         });
 
-    }
-    public void creditBtn(View view){
-        Intent intent = new Intent(this, Credit.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
     }
 
     @Override

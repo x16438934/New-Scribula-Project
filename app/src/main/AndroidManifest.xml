@@ -41,9 +41,6 @@
             android:name="com.getscriba.sampleapp.android.game.game.Leaderboard"
             android:configChanges="orientation|keyboardHidden" />
         <activity
-            android:name="com.getscriba.sampleapp.android.game.game.Credit"
-            android:configChanges="orientation|keyboardHidden" />
-        <activity
             android:name="com.getscriba.sampleapp.android.game.game.GameEngine"
             android:configChanges="orientation|keyboardHidden" />
 

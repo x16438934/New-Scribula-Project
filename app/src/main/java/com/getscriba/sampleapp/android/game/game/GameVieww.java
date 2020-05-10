@@ -57,22 +57,6 @@ public class GameVieww extends SurfaceView implements SurfaceHolder.Callback, Sc
         gameThread = new GameThread(holder,context);
     }
 
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        int action = event.getAction();
-//        // Tap is detected
-//        if(action == MotionEvent.ACTION_DOWN){
-//
-//            if(AppConstants.getGameEngine().gameState == 0){
-//                AppConstants.getGameEngine().gameState = 1;
-//
-//            }
-//       //  AppConstants.getGameEngine().bird.setVelocity(AppConstants.VELOCITY_WHEN_JUMPED);
-//
-//        }
-//        return true;
-//    }
-
     @Override
     public void foundDevices(List<ScribaStylusDevice> list) {
 

@@ -150,11 +150,6 @@ public class BitmapBank {
 
     public Bitmap scaleImage(Bitmap bitmap){
 
-        /*
-        We'll multiply widthHeightRatio with screenHeight to get scaled width of the bitmap.
-        Then call createScaledBitmap() to create a new bitmap, scaled from an existing bitmap, when possible.
-         */
-
         return Bitmap.createScaledBitmap(bitmap, getBackgroundWidth()/2, AppConstants.SCREEN_HEIGHT, false);
     }
 }
